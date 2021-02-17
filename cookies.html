@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="http://cdn.imnjb.me/libs/jquery.cookiecuttr/1.0/jquery.cookiecuttr.min.js"></script>
+    <link href="http://cdn.imnjb.me/libs/jquery.cookiecuttr/1.0/cookiecuttr.css" rel="stylesheet" type="text/css" />
+</head>
+<style>
+
+</style>
+
+<body>
+    <h1>EJEMPLO MODAL POLÍTICA DE COOKIES</h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/2YBtspm8j8M" frameborder="0" allowfullscreen></iframe>
+    <script type="text/javascript">
+        if (jQuery.cookie('cc_cookie_accept') == 'cc_cookie_accept') {
+            //Código que no queremos que cargue hasta que el usuario acepte. Aquí pondríamos el código de Google Analytics o lo que nos interese.
+        }
+    </script>
+    <script type="text/javascript">
+        $.cookieCuttr();
+    </script>
+
+</body>
+
+</html>
