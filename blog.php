@@ -69,9 +69,7 @@
                             </a>
                         </li>
 
-                        <!--li class="nav-item">
-                            <a class="nav-link" href="#">Terapias</a>
-                        </li-->
+                       
                         <!--li><img src="./img/twiter.png " alt=" " width="48" height="48" /></li-->
                         <li class="nav-item  dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -111,10 +109,7 @@
                             </a>
                         </li>
 
-                        <!--li class="nav-item">
-                            <a class="nav-link" href="#">Terapias</a>
-                        </li-->
-                        <!--li><img src="./img/twiter.png " alt=" " width="48" height="48" /></li-->
+                       
                         <li class="nav-item m-4 dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Terapias
