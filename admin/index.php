@@ -51,8 +51,7 @@ if (isset($_POST['enviar'])){
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/c1fc52637c.js" crossorigin="anonymous"></script>
-
+<link href="../fontawesome/css/all.css" rel="stylesheet">
    
     <style>
       .bd-placeholder-img {

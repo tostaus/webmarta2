@@ -7,8 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/c1fc52637c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/alertify/alertify.css">
+<link href="../fontawesome/css/all.css" rel="stylesheet">    <link rel="stylesheet" href="../css/alertify/alertify.css">
     <link rel="stylesheet" href="../css/alertify/themes/bootstrap.rtl.min.css" />
     <script src="../js/jquery/jquery-3.5.1.min.js"></script>
 

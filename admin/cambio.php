@@ -51,8 +51,7 @@
     <!-- Custom styles for this template -->
     <link href="../css/carousel.css" rel="stylesheet">
     <link href="../css/pricing.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/c1fc52637c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/alertify/alertify.css">
+<link href="../fontawesome/css/all.css" rel="stylesheet">    <link rel="stylesheet" href="../css/alertify/alertify.css">
     <link rel="stylesheet" href="../css/alertify/themes/bootstrap.rtl.min.css" />
     <script src="../js/jquery/jquery-3.5.1.min.js"></script>
     <script src="./ckeditor/ckeditor.js"></script>

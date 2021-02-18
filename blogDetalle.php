@@ -37,8 +37,7 @@
     <link href="./css/pricing.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/alertify/alertify.css">
 
-    <script src="https://kit.fontawesome.com/c1fc52637c.js" crossorigin="anonymous"></script>
-    <script src="./js/jquery/jquery-3.5.1.min.js"></script>
+<link href="./fontawesome/css/all.css" rel="stylesheet">    <script src="./js/jquery/jquery-3.5.1.min.js"></script>
     <!-- Para botón de subir a principio página-->
     <script type='text/javascript'>
         $(document).ready(function() {
