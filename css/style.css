@@ -249,7 +249,14 @@
         text-decoration: none;
         color: #faff00;
     }
+    /* Letra para enlace diseño en pie*/
     
     .miletra {
         font-family: Arial, Helvetica, sans-serif;
+    }
+    /**Sombra letras carrousel*/
+    
+    .sombra {
+        color: white;
+        text-shadow: 0.1em 0.1em 0.2em black
     }
