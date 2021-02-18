@@ -8,6 +8,7 @@ $(document).ready(function() {
         var contiene = "cookiewebmartarubio";
         if (lasCookies.indexOf(contiene) !== -1) {
             document.getElementById("barraaceptacion").style.display = "none"; // Si existe quitamos barra
+            google();
         } else {
             QuitarCookie(); // si no quitamos barra y ponemos cookies
         }
@@ -39,6 +40,7 @@ function QuitarCookie() {
 
 function PonerCookie() {
     document.cookie = "cookiewebmartarubio=true;";
+    google();
 
 }
 
@@ -48,9 +50,19 @@ function otro() {
     if (lasCookies.indexOf(contiene) !== -1) {
         document.getElementById("barraaceptacion").style.display = "none";
         //alert(lasCookies);
+        google()
 
 
     } else {
         document.getElementById("barraaceptacion").style.display = "block";
     }
+}
+
+function google() {
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HHHKH31DY4');
 }
