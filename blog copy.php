@@ -419,8 +419,7 @@ a.btn-card {
                             <li>Aviso legal</li>
                             <li>Política de privacidad</li>
                             <li>Política de cookies</li>
-                            <li>Más información sobre cookies</li>
-
+                            
 
                         </ul>
                     </div>

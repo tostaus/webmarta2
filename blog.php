@@ -151,9 +151,7 @@
         
 
 
-        <!-- Marketing messaging and featurettes
-  ================================================== -->
-        <!-- Wrap the rest of the page in another container to center all the content. -->
+   
 
     <div class="container marketing">
         
@@ -231,8 +229,7 @@
                             <li>Aviso legal</li>
                             <li>Política de privacidad</li>
                             <li>Política de cookies</li>
-                            <li>Más información sobre cookies</li>
-
+                            
 
                         </ul>
                     </div>
