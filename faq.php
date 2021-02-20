@@ -218,12 +218,9 @@
                                 <a class="navbar-brand colormio" href="tel:+34644107668"><i class="fa fa-phone"></i>+34 644107668</a>
                             </li>
                             <li>
-                                <a class="navbar-brand colormio" href="mailto:mrubio.psico@gmail.com"><i class="fa fa-envelope"></i>mrubio.psico@gmail.com</a>
+                                <a class="navbar-brand colormio" href="mailto:contacto@martarubiopsicologosmalaga.com"><i class="fa fa-envelope"></i>contacto@martarubiopsicologosmalaga.com</a>
                             </li>
-                            <li>
-                                <a class="navbar-brand colormio" href="mailto:mrubio.psico@gmail.com"><i class="fa fa-envelope"></i>mrubio.psico@copao.com</a>
-
-                            </li>
+                            
                             <br>
                             <li>
                                 <b>Nº col AO11885</b>
