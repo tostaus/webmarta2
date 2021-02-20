@@ -299,9 +299,9 @@
                     <div class="col-lg-4 ">
                         <h3>Información</h3>
                         <ul class="list-unstyled one-column ">
-                            <li>Aviso legal</li>
-                            <li>Política de privacidad</li>
-                            <li>Política de cookies</li>
+                            <li><a class="colormio nav-link" href="avisolegal.html">Aviso legal</a></li>
+                            <li><a class="colormio nav-link" href="privacidad.html">Política de privacidad</a></li>
+                            <li><a class="colormio nav-link" href="cokies.html">Política de cookies</a></li>
                             
 
                         </ul>
