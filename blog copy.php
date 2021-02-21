@@ -416,9 +416,8 @@ a.btn-card {
                     <div class="col-lg-4 ">
                         <h3>Información</h3>
                         <ul class="list-unstyled one-column ">
-                            <li><a class="colormio nav-link" href="avisolegal.html">Aviso legal</a></li>
-                            <li><a class="colormio nav-link" href="privacidad.html">Política de privacidad</a></li>
-                            <li><a class="colormio nav-link" href="cokies.html">Política de cookies</a></li>
+                            <li><a class="colormio sinSubrayado" href="avisolegal.html">Aviso legal</a></li>                                                     <li><a class="colormio sinSubrayado" href="privacidad.html">Política de privacidad</a></li>
+                            <li><a class="colormio sinSubrayado" href="cokies.html">Política de cookies</a></li>
                             
 
                         </ul>

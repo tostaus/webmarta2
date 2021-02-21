@@ -180,7 +180,7 @@
                                 <a class="navbar-brand colormio" href="tel:+34644107668"><i class="fa fa-phone"></i>+34 644107668</a>
                             </li>
                             <li>
-                                <a class="navbar-brand colormio" href="mailto:contacto@martarubiopsicologosmalaga.com"><i class="fa fa-envelope"></i>contacto@martarubiopsicologosmalaga.com</a>
+                                <a class="sinSubrayado colormio" href="mailto:contacto@martarubiopsicologosmalaga.com"><i class="fa fa-envelope"></i>contacto@martarubiopsicologosmalaga.com</a>
                             </li>
                             
                             <br>
@@ -259,7 +259,8 @@
                                 <a class="navbar-brand colormio" href="tel:+34644107668"><i class="fa fa-phone"></i>+34 644107668</a>
                             </li>
                             <li>
-                                <a class="navbar-brand colormio" href="mailto:contacto@martarubiopsicologosmalaga.com"><i class="fa fa-envelope"></i>contacto@martarubiopsicologosmalaga.com</a>
+                                <a class="sinSubrayado colormio" href="mailto:contacto@martarubiopsicologosmalaga.com"><i class="fa fa-envelope"></i>contacto@martarubiopsicologosmalaga.com</a>
+
                             </li>
                             
                             <br>
@@ -299,9 +300,8 @@
                     <div class="col-lg-4 ">
                         <h3>Información</h3>
                         <ul class="list-unstyled one-column ">
-                            <li><a class="colormio nav-link" href="avisolegal.html">Aviso legal</a></li>
-                            <li><a class="colormio nav-link" href="privacidad.html">Política de privacidad</a></li>
-                            <li><a class="colormio nav-link" href="cokies.html">Política de cookies</a></li>
+                            <li><a class="colormio sinSubrayado" href="avisolegal.html">Aviso legal</a></li>                                                     <li><a class="colormio sinSubrayado" href="privacidad.html">Política de privacidad</a></li>
+                            <li><a class="colormio sinSubrayado" href="cokies.html">Política de cookies</a></li>
                             
 
                         </ul>
