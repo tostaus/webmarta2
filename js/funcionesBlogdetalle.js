@@ -11,10 +11,11 @@ $(document).ready(function() {
             const registro = JSON.parse(response);
 
             var template = ``;
+            // <h1 > $ { registro.titulo }. < /h1>
+            //<h5 class = "featurette-heading " > $ { registro.titulo }. < /h5>
 
             template += `
-            <h5 class="featurette-heading ">${registro.titulo}.</h5>
-
+            <h1>${registro.titulo }.</h1>
         <div class="col-md-7 " >
         <p class="lead justifica " > ${registro.comentario}<p>
         
