@@ -68,34 +68,43 @@ $(document).ready(function() {
         $('#registro-form').submit(e => {
             e.preventDefault();
             // Datos a enviar
-            const postData = {
-                blog_id: cod,
-                nombre: $('#nombre').val(),
-                email: $('#email').val(),
-                mensaje: $('#mensaje').val(),
+            if (!$('#privacidad').prop('checked')) {
+                alertify.alert("Psicología y Bienestar", "Por favor, acepte la política de privacidad.");
+                $('#privacidad').focus();
 
-            };
+            } else {
 
-            const url = 'enviarComentario.php';
-            console.log(postData, url);
-            // Enviamos datos y url
-            $.ajax({
-                url: url,
-                type: 'post',
-                data: postData,
-                dataType: 'json',
-                success: function(response) {
-                    console.log(response)
+                const postData = {
+                    blog_id: cod,
+                    nombre: $('#nombre').val(),
+                    email: $('#email').val(),
+                    mensaje: $('#mensaje').val(),
+
+                };
+
+                const url = 'enviarComentario.php';
+                console.log(postData, url);
+                // Enviamos datos y url
+                $.ajax({
+                    url: url,
+                    type: 'post',
+                    data: postData,
+                    dataType: 'json',
+                    success: function(response) {
+                        console.log(response)
 
 
 
-                }
+                    }
 
 
-            });
+                });
 
-            $('#registro-form').trigger('reset');
-            alertify.success('Su comentario ha sido enviado');
+                $('#registro-form').trigger('reset');
+                alertify.success('Su comentario ha sido enviado');
+
+            }
+
         });
 
 

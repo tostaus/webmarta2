@@ -233,6 +233,12 @@
                                 <textarea class="form-control" id="mensaje" name="mensaje" rows="3" min="25" required></textarea>
                             </div>
                             <hr>
+                            <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="privacidad">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Acepto la política de  <a class="sinSubrayado colormio" href="privacidad.html">privacidad</a>
+                            </label>
+                        </div>
                             <div class="form-group">
                                 <button class="w-100 btn btn-ttc" type="submit" name="submit">Enviar</button>
                             </div>
