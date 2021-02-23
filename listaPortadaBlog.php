@@ -2,6 +2,6 @@
   include ('./claseDB.php');
   
  
-    DB::listaPortadaBlog($leido);
+    DB::listaPortadaBlog();
 
 ?>

@@ -265,3 +265,9 @@
     .sinSubrayado {
         text-decoration: none;
     }
+    /* Letra Blog*/
+    
+    .letrablog {
+        font-size: 1.3em;
+        /* 1.4em x 10px = 14px */
+    }

@@ -29,7 +29,7 @@
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-
+       
     </style>
 
 
@@ -178,7 +178,7 @@
 
             <hr class="featurette-divider ">
 
-            <div class="row featurette justifica" id="blog">
+            <div class="row featurette justifica letrablog" id="blog">
                 
             </div>
 
