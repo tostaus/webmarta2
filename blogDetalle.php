@@ -199,9 +199,12 @@
                 </div>
              </div>
         </div>
-        <div class="container py-2" id="comentarios">
+        <div class="container py-2" >
+        
+            <div class="col-md-5" id="comentarios">
+           
             
-
+        </div>
         </div>
         <div class="container py-2">
         <div class="row">

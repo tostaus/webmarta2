@@ -54,6 +54,7 @@ $(document).ready(function() {
             <p>
                 ${registro.mensaje}
             </p>
+            <hr>
             </div>
     
     

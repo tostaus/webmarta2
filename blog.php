@@ -157,16 +157,16 @@
         
     
         <section class="details-card">
-    <div class="container">
-    <h1 class="text-center">Blog</h1>
-        <div class="row" id='blog1'>
-        
-        <br>
-        <d
-        </div>
+            <div class="container">
+            <h1 class="text-center">Blog</h1>
+                <div class="row" id='blog1'>
+                
+                    <br>
+                
+                </div>
 
         
-</section>
+        </section>
         </div>
         <br>
 
