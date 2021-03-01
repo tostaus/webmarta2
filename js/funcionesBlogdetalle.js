@@ -1,12 +1,11 @@
 // Inicio
 $(document).ready(function() {
-
     fetchLista();
 
     function fetchLista() {
         var cod = $('#cod').val();
 
-        $.post('./admin/devuelveBlog.php', { cod }, (response) => {
+        /*$.post('./admin/devuelveBlog.php', { cod }, (response) => {
             console.log(response);
             const registro = JSON.parse(response);
 
@@ -31,6 +30,31 @@ $(document).ready(function() {
           `
             $('#blog').html(template);
 
+        });*/
+
+        $.ajax({
+            url: './admin/devuelveBlog.php', // **** Cambiarlo en cada tabla 
+            data: { cod },
+            type: 'POST',
+            success: function(response) {
+                const registro = JSON.parse(response);
+                let template = '';
+                console.log(registro);
+
+                
+                    // Creamos Tabla
+                    template += `
+                    <h1>${registro.titulo }.</h1>
+                        <div class="col-md-7 " >
+                        <p class="lead justifica " > ${registro.comentario}<p>
+                        </div>
+                        <div class="col-md-5 ">
+                            <img src="./admin/blog/imagenes/${registro.imagen}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto " width="500 " height="500 " />
+                        </div>
+                  `
+               
+                $('#blog').html(template);
+            }
         });
 
         $.ajax({

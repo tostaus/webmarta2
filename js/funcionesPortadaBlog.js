@@ -23,7 +23,7 @@ $(document).ready(function() {
                     var res = registro.comentario.substring(0, 200) + " ...";
 
                     template += `
-                    <div class="col-md-4" >
+                    <div class="col-md-4">
                     
                         <div class="card-content" codigo="${registro.id}">
                         <div class="card-img">
@@ -34,9 +34,8 @@ $(document).ready(function() {
                     <small class="text-muted">${registro.fecha}${" "}${registro.hora}</small>
                         <h3>${registro.titulo}</h3>
                         <p class="justifica">${res}</p>
-                        <button class="read btn btn-ttc">
-                        Leer más 
-                       </button>
+                       
+                       <a href="blogDetalle.php?cod=${registro.id}" class="btn btn-ttc" role="button"">Leer más</a>
                     </div>
                             </div>
                         </div>
@@ -51,10 +50,14 @@ $(document).ready(function() {
     }
 
     // Borrar Correo
-    $(document).on('click', '.read', (e) => {
+   /* $(document).on('click', '.read', (e) => {
+
+        
 
         const element = $(this)[0].activeElement.parentElement.parentElement;
+        //const element = $('.elementor-active');
         const cod = $(element).attr('codigo');
+        console.log (element);
         console.log(cod);
         url = "blogDetalle.php?cod=" + cod
 
@@ -62,6 +65,6 @@ $(document).ready(function() {
 
 
 
-    });
+    });*/
 
 });
