@@ -16,6 +16,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
     <link href="css/style.css" rel="stylesheet">
 
     <style>
@@ -162,7 +164,7 @@
   ================================================== -->
         <!-- Wrap the rest of the page in another container to center all the content. -->
 
-        <div class="container marketing ">
+        <div class="container marketing">
 
 
 
@@ -171,8 +173,8 @@
 
             <hr class="featurette-divider ">
 
-            <div class="row featurette ">
-            <div class="col-lg-4 col-md-6 dropmio">
+            <div class="row featurette " >
+            <div class="col-lg-4 col-md-6 dropmio" data-aos="flip-right" data-aos-delay="100">
                         <h3>Contacto</h3>
                         <ul class="list-unstyled one-column ">
 
@@ -194,7 +196,7 @@
                 <div class="col-md-1 ">
 
                 </div>
-                <div class="col-md-7 border">
+                <div class="col-md-7 border" data-aos="flip-left" data-aos-delay="100">
                     <hr>
                     <form id="registro-form" enctype="multipart/form-data">
                         <div class="form-row">
@@ -319,9 +321,11 @@
             </div>
             <div class="copyright text-center ">
 
-<span>Copyright &copy; 2021  Marta Rubio Lara.
+            <span>Copyright &copy; 2021  Marta Rubio Lara.
                 Diseño por: <a  href="https://creacioneswebsitios.es">creacioneswebsitios.es</a></span>            </div>
         </footer>
+        <div id="preloader"></div>
+
     </main>
 
 
@@ -329,6 +333,8 @@
     <script src="./js/bootstrap4/bootstrap.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js "></script>
     <script src="js/alertify/alertify.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+
     <script src="js/funcionesContacto.js"></script>
 
 

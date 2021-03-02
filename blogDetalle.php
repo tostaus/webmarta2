@@ -23,6 +23,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
 
 
+   
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -37,8 +38,9 @@
     <link href="css/carousel.css" rel="stylesheet">
     <link href="./css/pricing.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/alertify/alertify.css">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
-<link href="./fontawesome/css/all.css" rel="stylesheet">    <script src="./js/jquery/jquery-3.5.1.min.js"></script>
+    <link href="./fontawesome/css/all.css" rel="stylesheet">    <script src="./js/jquery/jquery-3.5.1.min.js"></script>
     <!-- Para botón de subir a principio página-->
     <script type='text/javascript'>
         $(document).ready(function() {
@@ -170,7 +172,7 @@
   ================================================== -->
         <!-- Wrap the rest of the page in another container to center all the content. -->
 
-        <div class="container marketing ">
+        <div class="container marketing">
 
 
 
@@ -178,7 +180,7 @@
 
             <hr class="featurette-divider ">
 
-            <div class="row featurette justifica letrablog" id="blog">
+            <div id="blog" >
                 
             </div>
 
@@ -191,58 +193,53 @@
         </div>
         <input type="text" id="cod" value = "<?php echo $cod;?>" hidden>
         <!-- /.container -->
-        <div class="container py-2">
-            <div class="row">
-                <div class="col">
-                    <h2 class="font-weight-light">Comentarios</h2>
-                    
-                </div>
-             </div>
+        <div class="container py-2" id="cabeceraComentario">
+            
         </div>
-        <div class="container py-2" >
+        <div class="container py-2">
         
             <div class="col-md-5" id="comentarios">
            
             
+            </div>
         </div>
-        </div>
-        <div class="container py-2">
-        <div class="row">
-            <div class="col-md-5 border">
-            <h5 class="font-weight-light">Enviar Comentario <br>
-                    
-                    </h5>
-                    <small class="text-muted">Tu email no será publicado.</small><br>
-                    <small class="text-muted">El comentario será publicado después de ser aprobado.</small>
-                        <hr>
-                        <form id="registro-form" enctype="multipart/form-data">
-                            <div class="form-row">
-                                <div class="col-md-4 mb-3">
-                                    <label for="nombre">Nombre:<span class="red">*</span></label>
-                                    <input type="text" class="form-control" id="nombre" name="nombre" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="col-md-4 mb-3">
-                                    <label for="email">Email:<span class="red">*</span></label>
-                                    <input type="email" class="form-control" id="email" name="email" required>
-                                </div>
-                            </div>
-                            
+        <div class="container py-2" id="formularioComentario">
+            <div class="row" data-aos="fade-right" data-aos-delay="100">
+                <div class="col-md-5 border">
+                    <h5 class="font-weight-light">Enviar Comentario <br>
                         
-                            <div class="form-group">
-                                <label for="mensaje">Mensaje:<span class="red">*</span></label>
-                                <textarea class="form-control" id="mensaje" name="mensaje" rows="3" min="25" required></textarea>
-                            </div>
+                        </h5>
+                        <small class="text-muted">Tu email no será publicado.</small><br>
+                        <small class="text-muted">El comentario será publicado después de ser aprobado.</small>
                             <hr>
-                            <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="privacidad">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Acepto la política de  <a class="sinSubrayado colormio" href="privacidad.html">privacidad</a>
-                            </label>
-                        </div>
-                            <div class="form-group">
+                            <form id="registro-form" enctype="multipart/form-data">
+                                <div class="form-row">
+                                    <div class="col-md-4 mb-3">
+                                        <label for="nombre">Nombre:<span class="red">*</span></label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="col-md-4 mb-3">
+                                        <label for="email">Email:<span class="red">*</span></label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+                                </div>
+                                
+                            
+                                <div class="form-group">
+                                    <label for="mensaje">Mensaje:<span class="red">*</span></label>
+                                    <textarea class="form-control" id="mensaje" name="mensaje" rows="3" min="25" required></textarea>
+                                </div>
+                                <hr>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="privacidad">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Acepto la política de  <a class="sinSubrayado colormio" href="privacidad.html">privacidad</a>
+                                </label>
+                            </div>
+                                <div class="form-group">
                                 <button class="w-100 btn btn-ttc" type="submit" name="submit">Enviar</button>
                             </div>
                             <hr> </form>
@@ -321,9 +318,11 @@
             </div>
             <div class="copyright text-center ">
 
-<span>Copyright &copy; 2021  Marta Rubio Lara.
+            <span>Copyright &copy; 2021  Marta Rubio Lara.
                 Diseño por: <a  href="https://creacioneswebsitios.es">creacioneswebsitios.es</a></span>            </div>
         </footer>
+        <div id="preloader"></div>
+
     </main>
 
 
@@ -332,7 +331,10 @@
     <script src="./js/bootstrap4/bootstrap.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js "></script>
     <script src="js/alertify/alertify.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+        
     <script src="js/funcionesBlogdetalle.js"></script>
+    
 
 
 

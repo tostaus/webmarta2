@@ -16,6 +16,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
     <link href="css/style.css" rel="stylesheet">
 
     <style>
@@ -159,7 +161,7 @@
   ================================================== -->
         <!-- Wrap the rest of the page in another container to center all the content. -->
 
-        <div class="container marketing">
+        <div class="container marketing" data-aos="zoom-in" data-aos-delay="100">
 
             <br>
 
@@ -206,7 +208,7 @@
             <p class="float-end "><a href="# ">Back to top</a></p>
             <p>&copy; 2017-2020 Company, Inc. &middot; <a href="# ">Privacy</a> &middot; <a href="# ">Terms</a></p>
         </footer-->
-        <footer>
+        <footer  data-aos="fade-up" data-aos-delay="100">
             <div class="container ">
                 <div class="row ">
 
@@ -273,6 +275,8 @@
 <span>Copyright &copy; 2021  Marta Rubio Lara.
                 Diseño por: <a  href="https://creacioneswebsitios.es">creacioneswebsitios.es</a></span>            </div>
         </footer>
+        <div id="preloader"></div>
+
     </main>
 
 
@@ -280,6 +284,8 @@
     <!-- Always remember to call the above files first before calling the bootstrap.min.js file -->
     <script src="./js/bootstrap4/bootstrap.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js "></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+
     <script src="js/funcionesFaq.js "></script>
 
 

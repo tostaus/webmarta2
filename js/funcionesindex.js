@@ -66,3 +66,29 @@ function google() {
 
     gtag('config', 'G-HHHKH31DY4');
 }
+
+//
+function aos_init() {
+
+    AOS.init({
+
+        duration: 1000,
+
+        once: true
+
+    });
+
+}
+
+$(window).on('load', function() { // lo metemos al cargar web
+
+    aos_init();
+
+});
+$(window).on('load', function() {
+    if ($('#preloader').length) {
+        $('#preloader').delay(100).fadeOut('slow', function() {
+            $(this).remove();
+        });
+    }
+});

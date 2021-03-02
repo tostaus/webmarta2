@@ -1,5 +1,7 @@
+
 // Inicio
 $(document).ready(function() {
+    
     fetchLista();
 
     function fetchLista() {
@@ -44,6 +46,7 @@ $(document).ready(function() {
                 
                     // Creamos Tabla
                     template += `
+                    <div class="row featurette justifica letrablog" data-aos="fade-right" data-aos-delay="100">
                     <h1>${registro.titulo }.</h1>
                         <div class="col-md-7 " >
                         <p class="lead justifica " > ${registro.comentario}<p>
@@ -51,12 +54,13 @@ $(document).ready(function() {
                         <div class="col-md-5 ">
                             <img src="./admin/blog/imagenes/${registro.imagen}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto " width="500 " height="500 " />
                         </div>
+                    </div>
                   `
                
                 $('#blog').html(template);
             }
         });
-
+        
         $.ajax({
             url: './devuelveDetalleBlog.php', // **** Cambiarlo en cada tabla 
             data: { cod },
@@ -65,30 +69,39 @@ $(document).ready(function() {
                 const registros = JSON.parse(response);
                 let template = '';
                 console.log(registros);
+                let cabeceraComentario =` <div class="row" data-aos="fade-right" data-aos-delay="100">
+                                    <div class="col">
+                                        <h2 class="font-weight-light">Comentarios</h2>
+                                        
+                                    </div>
+                                    </div>`;
+                $('#cabeceraComentario').html(cabeceraComentario);
 
                 registros.forEach(registro => {
                     // Creamos Tabla
                     template += `
-                    <div class="row">
-            <div class="col">
-            <img src="./img/${registro.foto} " class="img-fluid rounded-circle" alt=" " width="48 " height="48 " />
-            <h5 class="font-weight-light">${registro.nombre}
-                <small class="text-muted">Comentó el ${registro.fecha}</small>
-                </h5>
-            <p>
-                ${registro.mensaje}
-            </p>
-            <hr>
-            </div>
+                    <div class="row" data-aos="fade-right" data-aos-delay="100">
+                        <div class="col">
+                        <img src="./img/${registro.foto} " class="img-fluid rounded-circle" alt=" " width="48 " height="48 " />
+                        <h5 class="font-weight-light">${registro.nombre}
+                            <small class="text-muted">Comentó el ${registro.fecha}</small>
+                            </h5>
+                        <p>
+                            ${registro.mensaje}
+                        </p>
+                        <hr>
+                        </div>
     
     
-        </div>
+                    </div>
                   `
                 });
                 $('#comentarios').html(template);
+                
             }
         });
 
+        
         // Pulsar en guardar -  submit
         $('#registro-form').submit(e => {
             e.preventDefault();
@@ -142,3 +155,29 @@ $(document).ready(function() {
 
 
 });
+//
+function aos_init() {
+
+    AOS.init({
+
+        duration: 1000,
+
+        once: true
+
+    });
+
+}
+
+$(window).on('load', function() { // lo metemos al cargar web
+
+    aos_init();
+
+});
+$(window).on('load', function() {
+    if ($('#preloader').length) {
+        $('#preloader').delay(100).fadeOut('slow', function() {
+            $(this).remove();
+        });
+    }
+});
+

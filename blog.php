@@ -27,8 +27,9 @@
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
     <link href="./css/pricing.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
-<link href="./fontawesome/css/all.css" rel="stylesheet">    <script src="./js/jquery/jquery-3.5.1.min.js"></script>
+    <link href="./fontawesome/css/all.css" rel="stylesheet">    <script src="./js/jquery/jquery-3.5.1.min.js"></script>
     <!-- Para botón de subir a principio página-->
     <script type='text/javascript'>
         $(document).ready(function() {
@@ -157,7 +158,7 @@
         
     
         <section class="details-card">
-            <div class="container">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
             <h1 class="text-center">Blog</h1>
                 <div class="row" id='blog1'>
                 
@@ -171,8 +172,8 @@
         <br>
 
 
-        <footer>
-            <div class="container ">
+        <footer data-aos="fade-up" data-aos-delay="100">
+            <div class="container " >
                 <div class="row ">
 
                 <div class="col-lg-4 col-md-6 ">
@@ -239,6 +240,8 @@
 <span>Copyright &copy; 2021  Marta Rubio Lara.
                 Diseño por: <a  href="https://creacioneswebsitios.es">creacioneswebsitios.es</a></span>            </div>
         </footer>
+        <div id="preloader"></div>
+
     </main>
 
 
@@ -246,6 +249,8 @@
     <script src="./js/bootstrap4/bootstrap.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js "></script>
     <script src="js/alertify/alertify.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+
     <script src="js/funcionesPortadaBlog.js"></script>
 
 

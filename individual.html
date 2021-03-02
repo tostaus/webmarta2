@@ -26,6 +26,7 @@
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
     <link href="./css/pricing.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
     <link href="./fontawesome/css/all.css" rel="stylesheet">
     <script src="./js/jquery/jquery-3.5.1.min.js"></script>
@@ -154,7 +155,7 @@
   ================================================== -->
         <!-- Wrap the rest of the page in another container to center all the content. -->
 
-        <div class="container marketing">
+        <div class="container marketing" data-aos="zoom-out" data-aos-delay="100">
 
 
 
@@ -298,6 +299,8 @@
                 <span>Copyright &copy; 2021  Marta Rubio Lara.
                 Diseño por: <a  href="https://creacioneswebsitios.es">creacioneswebsitios.es</a></span> </div>
         </footer>
+        <div id="preloader"></div>
+
     </main>
 
 
@@ -305,6 +308,37 @@
     <!-- Always remember to call the above files first before calling the bootstrap.min.js file -->
     <script src="./js/bootstrap4/bootstrap.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js "></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script>
+        // Init AOS
+
+        function aos_init() {
+
+            AOS.init({
+
+                duration: 1000,
+
+                once: true
+
+            });
+
+        }
+
+        $(window).on('load', function() { // lo metemos al cargar web
+
+            aos_init();
+
+        });
+        $(window).on('load', function() {
+            if ($('#preloader').length) {
+                $('#preloader').delay(100).fadeOut('slow', function() {
+                    $(this).remove();
+                });
+            }
+        });
+        
+
+    </script>
 
 
 

@@ -17,6 +17,8 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
 
     <style>
 
@@ -159,7 +161,7 @@
   ================================================== -->
         <!-- Wrap the rest of the page in another container to center all the content. -->
 
-        <div class="container marketing">
+        <div class="container marketing" data-aos="zoom-out" data-aos-delay="100">
 
 
 
@@ -276,6 +278,8 @@
                 <span>Copyright &copy; 2021  Marta Rubio Lara.
                 Diseño por: <a  href="https://creacioneswebsitios.es">creacioneswebsitios.es</a></span> </div>
         </footer>
+        <div id="preloader"></div>
+
     </main>
 
 
@@ -283,6 +287,36 @@
     <!-- Always remember to call the above files first before calling the bootstrap.min.js file -->
     <script src="./js/bootstrap4/bootstrap.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js "></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script>
+        // Init AOS
+
+        function aos_init() {
+
+            AOS.init({
+
+                duration: 1000,
+
+                once: true
+
+            });
+
+        }
+
+        $(window).on('load', function() { // lo metemos al cargar web
+
+            aos_init();
+
+        });
+        $(window).on('load', function() {
+            if ($('#preloader').length) {
+                $('#preloader').delay(100).fadeOut('slow', function() {
+                    $(this).remove();
+                });
+            }
+        });
+
+    </script>
 
 
 
