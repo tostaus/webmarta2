@@ -1,5 +1,6 @@
 $(document).ready(function() {
     // Para borrar cookies desmarcar esta linea
+
     //document.cookie = "cookiewebmartarubio=; max-age=0";
     // Comprobamos si sigue navegando con cualquier click
     $(document).on('click', 'body *', function() {
