@@ -30,7 +30,7 @@
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-       
+
     </style>
 
 
@@ -180,7 +180,7 @@
 
             <hr class="featurette-divider ">
 
-            <div id="blog" >
+            <div id="blog" data-aos="zoom-out" data-aos-delay="100" >
                 
             </div>
 

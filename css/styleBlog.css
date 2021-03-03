@@ -50,6 +50,7 @@ section {
 
 .card-desc {
     padding: 1.25rem;
+    height:400px;
 }
 
 .card-desc h3 {

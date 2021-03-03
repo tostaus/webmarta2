@@ -46,10 +46,13 @@ $(document).ready(function() {
                 
                     // Creamos Tabla
                     template += `
-                    <div class="row featurette justifica letrablog" data-aos="fade-right" data-aos-delay="100">
-                    <h1>${registro.titulo }.</h1>
+
+                    <h1 class="featurette-heading">${registro.titulo }.</h1>
+                    <br>
+                    <div class="row featurette letrablog justifica" >
+                    
                         <div class="col-md-7 " >
-                        <p class="lead justifica " > ${registro.comentario}<p>
+                             ${registro.comentario}
                         </div>
                         <div class="col-md-5 ">
                             <img src="./admin/blog/imagenes/${registro.imagen}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto " width="500 " height="500 " />
