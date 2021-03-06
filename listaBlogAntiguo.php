@@ -29,9 +29,9 @@
     <link href="css/carousel.css" rel="stylesheet">
     <link href="./css/pricing.css" rel="stylesheet">
 
-<link href="./fontawesome/css/all.css" rel="stylesheet">    <!script src="./js/jquery/jquery-3.5.1.min.js"></!script>
+<link href="./fontawesome/css/all.css" rel="stylesheet">    <script src="./js/jquery/jquery-3.5.1.min.js"></script>
     <!-- Para botón de subir a principio página-->
-    <!script type='text/javascript'>
+    <script type='text/javascript'>
         $(document).ready(function() {
             $(window).scroll(function() {
                 if ($(this).scrollTop() > 100) {
@@ -47,7 +47,7 @@
                 return false;
             });
         });
-    </!script>
+    </script>
 </head>
 
 <body>
@@ -176,39 +176,8 @@
             
         
         
-      <tbody>
-          
-            <th scope="row" hidden><?php echo $k+1; ?></th>
-            <td>Foto</td>
-            <td>Fecha</td>
-            <td>Título</td>
-            <td>Resumen</td>
-            <td>Botón</td>
-          </tr>
-          
-        </tbody>
-        <tbody>
-          
-            <th scope="row" hidden><?php echo $k+1; ?></th>
-            <td>Foto</td>
-            <td>Fecha</td>
-            <td>Título</td>
-            <td>Resumen</td>
-            <td>Botón</td>
-          </tr>
-          
-        </tbody>
-        <tbody>
-          
-            <th scope="row" hidden><?php echo $k+1; ?></th>
-            <td>Foto</td>
-            <td>Fecha</td>
-            <td>Título</td>
-            <td>Resumen</td>
-            <td>Botón</td>
-          </tr>
-          
-        </tbody>
+     
+       
       </table>
       
       <!-- Fin Contenido --> 
@@ -220,9 +189,6 @@
         </div>
         <br>
 
-        <style>
-
-        </style>
 
 
         <!-- /.container -->
@@ -234,7 +200,7 @@
             <p class="float-end "><a href="# ">Back to top</a></p>
             <p>&copy; 2017-2020 Company, Inc. &middot; <a href="# ">Privacy</a> &middot; <a href="# ">Terms</a></p>
         </footer-->
-        <footer  class="fixed-bottom" data-aos="fade-up" data-aos-delay="100">
+        <footer  data-aos="fade-up" data-aos-delay="100">
             <div class="container ">
                 <div class="row ">
 
@@ -312,7 +278,7 @@
     <script src="js/bootstrap/bootstrap.min.js "></script>
     <script src="assets/vendor/aos/aos.js"></script>
 
-    <script src="js/funcionesFaq.js "></script>
+    <script src="js/funcionesBlogAntiguo.js "></script>
 
 
 
