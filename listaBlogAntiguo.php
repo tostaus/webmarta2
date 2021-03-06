@@ -162,30 +162,25 @@
         <!-- Wrap the rest of the page in another container to center all the content. -->
 
         <div class="container marketing" data-aos="zoom-in" data-aos-delay="100">
+            <hr class="featurette-divider">
 
-        <div class="container">
-  <h3 class="mt-5">Mostrar registros con BootStrap PHP DBcontroller</h3>
-  <hr>
-  <div class="row">
-    <div class="col-12 col-md-12"> 
-      <!-- Contenido -->
-      
-      <table class="table" id="tabla">
-        
-           
+            <div class="container">
+                <h3 class="mt-5">Entradas Blog Anteriores</h3>
+                    <hr>
+                    <div class="row">
+                        <div class="col-12 col-md-12"> 
+                        <!-- Contenido -->
+                        
+                            <table class="table" id="tabla">
+                
+                            </table>
             
-        
-        
-     
-       
-      </table>
-      
-      <!-- Fin Contenido --> 
-    </div>
-  </div>
+        <!-- Fin Contenido --> 
+                        </div>
+                    </div>
   <!-- Fin row --> 
   
-</div>
+            </div>
         </div>
         <br>
 

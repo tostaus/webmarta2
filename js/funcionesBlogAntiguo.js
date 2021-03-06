@@ -21,12 +21,12 @@ $(document).ready(function() {
                     template += `
                     <tbody>
           
-                    <th scope="row" hidden><?php echo $k+1; ?></th>
+                    <th scope="row" hidden></th>
                     <td><img src="./admin/blog/imagenes/${registro.imagen}" alt="" width="150"></td>
                     <td>${registro.fecha}${" "}${registro.hora}</td>
                     <td>${registro.titulo}</td>
-                    <td>${res}</td>
-                    <td><a href="blogDetalle.php?cod=${registro.id}" class="btn btn-ttc" role="button"">Leer más</a></td>
+                    
+                    <td><a href="blogDetalle.php?cod=${registro.id}" class="btn btn-ttc" role="button"">Leer</a></td>
                   </tr>
                   
                 </tbody>
