@@ -29,7 +29,12 @@
     <link href="./css/pricing.css" rel="stylesheet">
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
-    <link href="./fontawesome/css/all.css" rel="stylesheet">    <script src="./js/jquery/jquery-3.5.1.min.js"></script>
+    <link href="./fontawesome/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/jPages.css">
+    <script src="./js/jquery/jquery-3.5.1.min.js"></script>
+    <script src="./js/jPages.js"></script>
+
+
     <!-- Para botón de subir a principio página-->
     <script type='text/javascript'>
         $(document).ready(function() {
@@ -46,6 +51,7 @@
                 }, 600);
                 return false;
             });
+            
         });
     </script>
 </head>
@@ -155,17 +161,74 @@
    
 
     <div class="container marketing">
-        
     
+
+<!-- item container -->
+
         <section class="details-card">
             <div class="container" data-aos="fade-up" data-aos-delay="100">
             <h1 class="text-center">Blog</h1>
-                <div class="row" id='blog1'>
-                
-                    <br>
-                
-                </div>
+                <div class="row" id='itemContainer'>
+                    <?php
+  
+ 
+                        function conectar(){
+                            $db_host = 'localhost';  //  hostname 
+                            $db_name = 'psico';  //  databasename
+                            $db_user = 'prueba';  //  username
+                            $user_pw = 'prueba';  //  password
+                            try {
+                                $conexion = new PDO('mysql:host='.$db_host.'; dbname='.$db_name, $db_user, $user_pw);
+                                $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                $conexion->exec("set names utf8");
+                            } catch (PDOException $e) { //Se capturan los mensajes de error
+                                die("Error: " . $e->getMessage()); 
+                            }
+                            return $conexion;
+                    
+                        }
+                    $conecta=conectar();
+                    $consulta = "SELECT * FROM blogs ORDER BY fecha DESC , hora DESC";
+                    $resultado = $conecta->prepare($consulta);
+                    try{
+                        $resultado ->execute();
+                        $row = $resultado->fetchAll();
+                        //$jsonstring = json_encode($registros);
+                        //print_r($row);
+                    }catch (Exception $e){ // Capturamos el error si se produce
+                        $mensaje = $e->getMessage();
+                            die("No se ha podido encontrar Entradas: " . $e->getMessage()); 
+                    }       
+                    
+                    foreach ($row as $registro) {
+                        //$res =substr(registro['comentario'],200) . " ...";
+                        $res =substr($registro['comentario'],0,200) . "...";
+                        echo '<div class="col-md-4">';
+                        echo '<div class="card-content">';
+                        echo '<div class="card-img">';
+                        echo '<img src="./admin/blog/imagenes/'.$registro['imagen'].'" alt="">';
+                        echo '</div>';
+                        echo '<div class="card-desc">';
+                        echo '<small class="text-muted">'.$registro['fecha'].' '.$registro['hora'].'</small>';
+                        echo '<h3>'.$registro['titulo'].'</h3>';
+                        echo '<p class="justifica">'.$res.'</p>';
+                        echo '<a href="blogDetalle.php?cod='.$registro['id'].'"class="btn btn-ttc" role="button"">Leer más</a>';
 
+
+                        echo '</div>';
+
+
+                        echo '</div>';
+                        echo '</div>';
+                        
+                        
+                    }
+                    ?>
+
+                </div>
+                <div class="holder text-center colormio">
+                </div>
+                
         
         </section>
         </div>
@@ -250,7 +313,10 @@
     <script src="js/bootstrap/bootstrap.min.js "></script>
     <script src="js/alertify/alertify.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
+    <script>
 
+   
+</script>
     <script src="js/funcionesPortadaBlog.js"></script>
 
 

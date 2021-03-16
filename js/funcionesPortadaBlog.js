@@ -1,6 +1,6 @@
 // Inicio
-$(document).ready(function() {
-
+/*$(document).ready(function() {
+    
     fetchLista();
 
     function fetchLista() {
@@ -26,26 +26,29 @@ $(document).ready(function() {
                     <div class="col-md-4">
                     
                         <div class="card-content" codigo="${registro.id}">
-                        <div class="card-img">
-                        <img src="./admin/blog/imagenes/${registro.imagen}" alt="">
+                            <div class="card-img">
+                                <img src="./admin/blog/imagenes/${registro.imagen}" alt="">
                         
-                    </div>
-                    <div class="card-desc">
-                    <small class="text-muted">${registro.fecha}${" "}${registro.hora}</small>
-                        <h3>${registro.titulo}</h3>
-                        <p class="justifica">${res}</p>
+                            </div>
+                            <div class="card-desc">
+                                <small class="text-muted">${registro.fecha}${" "}${registro.hora}</small>
+                                <h3>${registro.titulo}</h3>
+                                <p class="justifica">${res}</p>
                        
-                       <a href="blogDetalle.php?cod=${registro.id}" class="btn btn-ttc" role="button"">Leer más</a>
-                    </div>
+                                <a href="blogDetalle.php?cod=${registro.id}" class="btn btn-ttc" role="button"">Leer más</a>
                             </div>
                         </div>
-                    </div>
+                        
+                    </li>
                   `
 
                 });
-                $('#blog' + n).html(template);
+                $('#itemContainer').html(template);
             }
         });
+        let template2=`                <div class="holder">
+        </div>`;
+        $('#contapagina').html(template2);
 
     }
 
@@ -67,7 +70,7 @@ $(document).ready(function() {
 
     });*/
 
-});
+//});
 //
 function aos_init() {
 
@@ -84,6 +87,7 @@ function aos_init() {
 $(window).on('load', function() { // lo metemos al cargar web
 
     aos_init();
+    
 
 });
 $(window).on('load', function() {
@@ -92,4 +96,23 @@ $(window).on('load', function() {
             $(this).remove();
         });
     }
+});
+$(window).on('load', function() { // lo metemos al cargar web
+
+    $(function(){
+        /* initiate the plugin */
+        $("div.holder").jPages({
+            containerID  : "itemContainer",
+            perPage      : 12,
+            startPage    : 1,
+            startRange   : 1,
+            midRange     : 5,
+            endRange     : 1,
+            first       : "Primero",
+            previous    : "Anterior",
+            next        : "Próximo",
+            last        : "Último"
+        });
+    });    
+
 });
