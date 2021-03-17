@@ -103,7 +103,7 @@ $(window).on('load', function() { // lo metemos al cargar web
         /* initiate the plugin */
         $("div.holder").jPages({
             containerID  : "itemContainer",
-            perPage      : 12,
+            perPage      : 9,
             startPage    : 1,
             startRange   : 1,
             midRange     : 5,

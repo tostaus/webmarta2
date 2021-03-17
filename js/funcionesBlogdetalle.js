@@ -47,7 +47,7 @@ $(document).ready(function() {
                     // Creamos Tabla
                     template += `
 
-                    <h1 class="featurette-heading">${registro.titulo }.</h1>
+                    <h1 class="featurette-heading">${registro.titulo }</h1>
                     <br>
                     <div class="row featurette letrablog justifica" >
                     
