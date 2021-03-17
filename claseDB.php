@@ -12,8 +12,8 @@ class DB {
     protected static function conectar(){
         $db_host = 'localhost';  //  hostname 
         $db_name = 'psico';  //  databasename
-        $db_user = 'prueba';  //  username
-        $user_pw = 'prueba';  //  password
+        $db_user = 'martarubio';  //  username
+        $user_pw = 'Martita93[}';  //  password
         try {
             $conexion = new PDO('mysql:host='.$db_host.'; dbname='.$db_name, $db_user, $user_pw);
             $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -330,7 +330,7 @@ public static function listaPortadaBlog(){
         $resultado ->execute();
         $registros = $resultado->fetchAll();
         $jsonstring = json_encode($registros);
-        echo $jsonstring;
+        return $registros;
     }catch (Exception $e){ // Capturamos el error si se produce
         $mensaje = $e->getMessage();
             die("No se ha podido encontrar Entradas: " . $e->getMessage()); 

@@ -170,38 +170,11 @@
             <h1 class="text-center">Blog</h1>
                 <div class="row" id='itemContainer'>
                     <?php
-  
- 
-                        function conectar(){
-                            $db_host = 'localhost';  //  hostname 
-                            $db_name = 'psico';  //  databasename
-                            $db_user = 'prueba';  //  username
-                            $user_pw = 'prueba';  //  password
-                            try {
-                                $conexion = new PDO('mysql:host='.$db_host.'; dbname='.$db_name, $db_user, $user_pw);
-                                $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                                $conexion->exec("set names utf8");
-                            } catch (PDOException $e) { //Se capturan los mensajes de error
-                                die("Error: " . $e->getMessage()); 
-                            }
-                            return $conexion;
-                    
-                        }
-                    $conecta=conectar();
-                    $consulta = "SELECT * FROM blogs ORDER BY fecha DESC , hora DESC";
-                    $resultado = $conecta->prepare($consulta);
-                    try{
-                        $resultado ->execute();
-                        $row = $resultado->fetchAll();
-                        //$jsonstring = json_encode($registros);
-                        //print_r($row);
-                    }catch (Exception $e){ // Capturamos el error si se produce
-                        $mensaje = $e->getMessage();
-                            die("No se ha podido encontrar Entradas: " . $e->getMessage()); 
-                    }       
+                    include ('./claseDB.php');
+                    // Metemos en variable el array que devuelve la función
+                    $row=DB::listaPortadaBlog();
                     
                     foreach ($row as $registro) {
-                        //$res =substr(registro['comentario'],200) . " ...";
                         $res =substr($registro['comentario'],0,200) . "...";
                         echo '<div class="col-md-4">';
                         echo '<div class="card-content">';
