@@ -397,6 +397,7 @@ public static function graboComentario($row){
     
 }
 
+// devuelveComentarios de un blog
 public static function devuelveComentario($cod){
     $conecta=self::conectar();
     $consulta ="SELECT * FROM comentarios WHERE blogs_id='$cod' and publicado=0";
@@ -413,6 +414,7 @@ public static function devuelveComentario($cod){
     }
    
 }
+
 
 public static function borraComentario($cod){
     $conecta=self::conectar();
@@ -433,6 +435,8 @@ public static function borraComentario($cod){
 
 
 }
+
+//Devuelve Comentarios Pendientes
 public static function listaComentarioPen(){
     $conecta=self::conectar();
     $consulta = "SELECT C.id, C.nombre, C.email, C.mensaje, C.fecha, C.publicado,
@@ -449,7 +453,7 @@ public static function listaComentarioPen(){
     }
    
 }
-  // Función para devolver un Contacto
+  // Función para devolver un Comentario
 
   public static function devuelveComentarioPen($cod){
     $conecta=self::conectar();
@@ -629,6 +633,26 @@ public static function cambiaPass($user,$clave){
         echo 1;
     }
     
+
+}
+
+public static function enviarContesta($row){
+    $conecta=self::conectar();
+    $id=$row['id'];
+    $contesta=$row['contesta'];
+    $fechacontesta=$row['fechacontesta'];
+    
+   
+   $consulta= "UPDATE comentarios SET contesta = '$contesta', fechacontesta='$fechacontesta' WHERE id ='$id'";
+    $resultado = $conecta->prepare($consulta);
+    try{
+        $resultado ->execute();
+        echo 0;
+    }catch (Exception $e){ // Capturamos el error si se produce
+        $mensaje = $e->getMessage();
+            die("No se ha podido borrar Entrada: " . $e->getMessage()); 
+        echo 1;
+    }
 
 }
 }

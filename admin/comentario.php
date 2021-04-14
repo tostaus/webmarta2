@@ -148,7 +148,54 @@
         <div class="container-fluid">
             <div class="row p-2" >
                 <!-- TABLA  -->
-                <div class="col-md-6">
+                <div class="col-md-6" id="formulariocomentario">
+                    <div class="card">
+                    <div class="card-body">
+                        <!-- FORMULARIO -->
+                        <form >
+                        <!--No cambiamos nunca el id codigo para poder enlazarlo siempre igual-->
+                        <input type="number" id="codigoformulario" hidden>
+                                                        
+                            <div class="form-group">
+                                <label for="contesta">Contestación</label>
+                                <textarea id="contesta" name="contesta" rows='80' required></textarea>
+                            </div>
+                            <script>
+                            
+                            CKEDITOR.replace("contesta", {
+                                    uiColor: '#f3f3f3',
+                                    language: 'es'
+                                });
+                                                  
+                            </script>
+                            <div class="form-group">
+                                <label for="fechacontesta">Fecha</label>
+                            <input type="date" name="fechacontesta" id="fechacontesta" required>
+                            
+                            </div>
+                                <br>
+                                
+                        <br>
+                        <button class="publicar btn btn-ttc" type="submit">
+                        <i class="fas fa-save"></i>
+
+                                Publicar 
+                        </button>
+                        <button class="borrarContestacion btn btn-danger">
+                        <i class="fas fa-trash"></i>
+                            Borrar 
+                        </button>
+                        <button class="cerrar btn btn-info">
+                        <i class="fas fa-window-close"></i>
+                            Cerrar 
+                        </button>
+                        </form>
+                        
+                        
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-6" id="tablamadre">
                     <table class="table table-bordered table-sm">
                         <thead>
                             <tr class="info">
@@ -164,6 +211,7 @@
                         <tbody id="tabla"></tbody>
                     </table>
                 </div>
+               
                 <div class="col-md-6" id="formulario">
                     <table class="table table-bordered table-sm">
                         <thead>
@@ -180,7 +228,7 @@
                         <tbody id="tabla2"></tbody>
                     </table>
                 </div>
-            </div>
+               
 
         </div>
         

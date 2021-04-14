@@ -11,6 +11,7 @@ $(document).ready(function() {
     let comenta = false;
     //Ocultamos formulario de Registro
     $('#formulario').hide();
+    $('#formulariocomentario').hide();
     // Función para lista de Registro
     function fetchLista() {
 
@@ -71,11 +72,14 @@ $(document).ready(function() {
                     <td>${registro.email}</td>
                     <td>${registro.mensaje}</td>
                     <td>${registro.fecha}</td>
-                   
                     <td>
                       <button class="borrarComentario btn btn-danger">
                       <i class="fas fa-trash"></i>
                       Borrar
+                      </button>
+                      <button class="comentarComentario btn btn-info">
+                      <i class="fas fa-comment"></i>
+                      Contestar
                       </button>
                       
                     </td>
@@ -90,9 +94,44 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    // Comentar Comentario
+    $(document).on('click', '.comentarComentario', (e) => {
+        $('#tablamadre').hide();
+        $('#formulariocomentario').show();
+        CKEDITOR.instances.contesta.destroy();
+
+        e.preventDefault();
+        const element = $(this)[0].activeElement.parentElement.parentElement;
+        const cod = $(element).attr('codigoComentario');
+        console.log(cod);
+        $.post('./devuelveComentarioPen.php', { cod }, (response) => {
+            const registro = JSON.parse(response);
+            
+            $('#codigoformulario').val(registro.id);
+            $('#contesta').val(registro.contesta);
+
+            CKEDITOR.replace("contesta", {
+                uiColor: '#f3f3f3',
+                language: 'es'
+            });
+            // Como no puedo mandar null a fecha cuando borro lo pongo a 1900
+            // Y compruebo aqui para imprimmir la fecha o vacio
+            if (registro.fechacontesta!='1900-01-01'){
+                $('#fechacontesta').val(registro.fechacontesta);
+
+            }else{
+                $('#fechacontesta').val('');
+
+            }
+            
 
 
-    // Borrar Correo
+        });
+    });
+   
+
+
+    // Borrar Comentario
     $(document).on('click', '.borrarComentario', (e) => {
         $('#formulario').hide();
         e.preventDefault();
@@ -173,26 +212,15 @@ $(document).ready(function() {
 
 
         $('#formulario').hide();
+        $('#formulariocomentario').hide();
+        $('#tablamadre').show();
+
         // Ocultamos botón guardar
 
 
 
     });
-    // Comprobamos tamaño del fichero
-    $(document).on('change', 'input[type="file"]', function() {
-        // this.files[0].size recupera el tamaño del archivo
-        // alert(this.files[0].size);
-        cambiofoto = true;
-        var fileName = this.files[0].name;
-        var fileSize = this.files[0].size;
-
-        if (fileSize > 600000) {
-            alertify.error('El archivo no debe superar los 600Kb');
-            this.value = '';
-            this.files[0].name = '';
-        }
-
-    });
+   
 
     function ponreadonly(no) {
         $('#titulo').attr('readonly', no);
@@ -201,99 +229,9 @@ $(document).ready(function() {
         $('#comentario').attr('readonly', no);
     }
 
-    $(document).on('click', '.comentarBlog', (e) => {
-        comenta = true;
-        CKEDITOR.instances.comentario.destroy();
-        // Hacemos visible el formulario para mostrar el registro
-        $('#titulo').attr('readonly', true);
-        $('#comentario').attr('readonly', false);
-        $('#fecha').attr('readonly', false);
-        $('#formulario').show();
+   
 
-        $('#image').hide()
-            //edit = 'true';
-            //ponreadonly(false);
-        const element = $(this)[0].activeElement.parentElement.parentElement;
-        const cod = $(element).attr('codigo');
-        //console.log(cod);
-        let template = ``;
-        // Nos devuelve el Registro y lo ponemos en el formulario
-        $.post('./devuelveBlog.php', { cod }, (response) => {
-            console.log(response);
-            const registro = JSON.parse(response);
-            $('#codigoformulario').val(registro.id);
-            $('#titulo').val(registro.titulo);
-            $('#fecha').val(fechaprint);
-
-            $('#comentario').val("");
-
-            CKEDITOR.replace("comentario", {
-                uiColor: '#f3f3f3',
-                language: 'es'
-            });
-            //$('#image').val(registro.imagen);
-
-
-
-            $('#image').hide();
-            $('#labelimage').hide();
-            $('.comenta').show();
-            $('.publicar').show();
-
-            $('#hora').hide();
-            $('#labelhora').hide();
-
-
-        });
-
-        e.preventDefault();
-    });
-
-    $(document).on('click', '.comenta', (e) => {
-        e.preventDefault();
-        var cod = $('#codigoformulario').val();
-        var fecha = new Date(); //Fecha actual
-        var mes = fecha.getMonth() + 1; //obteniendo mes
-        var dia = fecha.getDate(); //obteniendo dia
-        var ano = fecha.getFullYear(); //obteniendo año
-
-
-
-        var fechaprint = ano + "-" + dosdigitos(mes) + "-" + dosdigitos(dia);
-
-        const postData = {
-            blog_id: cod,
-            nombre: 'Marta Rubio',
-            email: 'ninguno',
-            mensaje: $('#comentario').val(),
-            fecha: $('#fecha').val(),
-
-        };
-
-        const url = '../enviarComentario.php';
-        console.log(postData, url);
-        // Enviamos datos y url
-        $.ajax({
-            url: url,
-            type: 'post',
-            data: postData,
-            dataType: 'json',
-            success: function(response) {
-                console.log(response)
-
-
-
-            }
-
-
-        });
-
-        $('#registro-form').trigger('reset');
-        alertify.success('Su comentario ha sido enviado');
-
-
-
-    });
+    
 
     function fechaprint() {
 
@@ -316,4 +254,101 @@ $(document).ready(function() {
         var minutos = fecha.getMinutes();
         return dosdigitos(hora) + ':' + dosdigitos(minutos);
     };
+
+
+
+     // enviar comentario de comentario
+     $('#formulariocomentario').submit(e => {
+        e.preventDefault();
+        const cod = $('#codigoformulario').val();
+
+        const postData = {
+            id: cod,
+            
+            contesta: $('#contesta').val(),
+            fechacontesta: $('#fechacontesta').val(),
+
+        };
+
+        const url = './enviarContesta.php';
+        console.log(postData, url);
+        // Enviamos datos y url
+        $.ajax({
+            url: url,
+            type: 'post',
+            data: postData,
+            dataType: 'json',
+            success: function(response) {
+                console.log(response)
+                if (response==0){
+
+                    alertify.success('Su contestación ha sido publicada');
+ 
+                }else{
+
+                    alertify.error('ERROR en Base de Datos');
+
+                }
+
+
+            }
+
+
+        });
+
+        $('#registro-form').trigger('reset');
+        $('#formulario').hide();
+        $('#formulariocomentario').hide();
+        $('#tablamadre').show();
+       
+    });
+    $(document).on('click', '.borrarContestacion', (e) => {
+        e.preventDefault();
+
+        console.log('borrar contestación');
+        const cod = $('#codigoformulario').val();
+
+        const postData = {
+            id: cod,
+            
+            contesta: null,
+            fechacontesta: '1900-01-01', // No se puede poner a NUll ponemos esta fecha y comprobamos al sacar formulario
+
+        };
+
+        const url = './enviarContesta.php';
+        console.log(postData, url);
+        // Enviamos datos y url
+        $.ajax({
+            url: url,
+            type: 'post',
+            data: postData,
+            dataType: 'json',
+            success: function(response) {
+                console.log(response)
+                if (response==0){
+
+                    alertify.success('Su contestación ha sido borrada');
+ 
+                }else{
+
+                    alertify.error('ERROR en Base de Datos');
+
+                }
+
+
+            }
+
+
+        });
+
+        $('#registro-form').trigger('reset');
+        $('#formulario').hide();
+        $('#formulariocomentario').hide();
+        $('#tablamadre').show();
+       
+    });
+
+    
+
 });

@@ -92,12 +92,28 @@ $(document).ready(function() {
                         <p>
                             ${registro.mensaje}
                         </p>
-                        <hr>
+                        
                         </div>
     
     
                     </div>
+
                   `
+                  if(registro.contesta!=null && registro.fechacontesta!="1900-01-01" ){
+                    template+= `<div class="contesta">
+                        <img src="./img/fotomarta.jpg" class="img-fluid rounded-circle" alt=" " width="48 " height="48 " />
+                         <h5 class="font-weight-light">Marta Rubio
+                            <small class="text-muted">Contestó el ${registro.fechacontesta}</small>
+                        </h5>
+                    <p>
+                        ${registro.contesta}
+                    </p>
+                    
+                    </div>`;
+
+                  }
+
+                  template+='<hr>'
                 });
                 $('#comentarios').html(template);
                 
